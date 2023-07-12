@@ -23,9 +23,9 @@ WORKDIR /
 # get the application from the build container (buildEnv)
 COPY --from=buildEnv /userapp ./
 RUN mkdir -p /var/app
-# RUN chmod 777 /var/app
+RUN chmod 777 /var/app
 # expose the port used
-ENV PORT=8080
+ENV PORT=8090
 EXPOSE ${PORT}
 #define label
 LABEL "version"="1.0.0" \
