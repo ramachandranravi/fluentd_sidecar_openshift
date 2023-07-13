@@ -25,7 +25,7 @@ COPY --from=buildEnv /userapp ./
 RUN mkdir -p /var/app
 RUN chmod 777 /var/app
 # expose the port used
-ENV PORT=8008
+ENV PORT=8080
 EXPOSE ${PORT}
 #define label
 LABEL "version"="1.0.0" \
