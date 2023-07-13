@@ -30,7 +30,7 @@ func main() {
 	// launch the http server
 	myport := os.Getenv("PORT")
 	if myport == "" {
-		myport = ":8008"
+		myport = ":8080"
 	} else {
 		log.Trace("Found a custom port :" + myport)
 		myport = ":" + myport
