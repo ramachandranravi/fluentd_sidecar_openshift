@@ -18,12 +18,22 @@ RUN chmod +x /userapp
 
 # Step 2 build the final image
 # use 
-FROM registry.access.redhat.com/ubi8/ubi-minimal
+FROM registry.access.redhat.com/ubi8/ubi:8.8-1009
+ARG UID=65000
+ARG GID=65000
 WORKDIR /
+RUN yum install shadow-utils.x86_64 -y
+RUN yum install sudo.x86_64 -y
 # get the application from the build container (buildEnv)
-COPY --from=buildEnv /userapp ./
-RUN mkdir -p /var/app
-RUN chmod 777 /var/app
+# COPY --from=buildEnv /userapp ./
+RUN groupadd --g 65000 nonroot
+RUN useradd -u 65000 -g 65000 nonroot
+RUN echo 'nonroot ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+USER nonroot
+RUN sudo mkdir -p /var/app
+RUN sudo chmod 777 /var/app
+# get the application from the build container (buildEnv)
+COPY --from=buildEnv --chown=nonroot:nonroot /userapp ./
 # expose the port used
 ENV PORT=8080
 EXPOSE ${PORT}

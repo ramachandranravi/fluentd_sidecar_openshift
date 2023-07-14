@@ -1,0 +1,469 @@
+{
+  "status": {
+    "id": "f4957b8f25df619774e61494a5d32369b18b80a00224d513ae5b08cc71b7d3a5",
+    "metadata": {
+      "attempt": 0,
+      "name": "fluentd"
+    },
+    "state": "CONTAINER_RUNNING",
+    "createdAt": "2023-07-13T04:58:46.298510014Z",
+    "startedAt": "2023-07-13T04:58:46.321678438Z",
+    "finishedAt": "0001-01-01T00:00:00Z",
+    "exitCode": 0,
+    "image": {
+      "annotations": {},
+      "image": "docker.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch"
+    },
+    "imageRef": "docker.io/fluent/fluentd-kubernetes-daemonset@sha256:c3a0797e96b544b8b1a9899a322bc54fffafee90a079b7ae7e78dde6f569a5a4",
+    "reason": "",
+    "message": "",
+    "labels": {
+      "io.kubernetes.container.name": "fluentd",
+      "io.kubernetes.pod.name": "samplelog-c47bb8fdf-shlps",
+      "io.kubernetes.pod.namespace": "logsample",
+      "io.kubernetes.pod.uid": "af7f68b4-597c-4595-a77c-b5b28fe7fa6b"
+    },
+    "annotations": {
+      "io.kubernetes.container.hash": "a19f88d8",
+      "io.kubernetes.container.restartCount": "0",
+      "io.kubernetes.container.terminationMessagePath": "/dev/termination-log",
+      "io.kubernetes.container.terminationMessagePolicy": "File",
+      "io.kubernetes.pod.terminationGracePeriod": "30"
+    },
+    "mounts": [
+      {
+        "containerPath": "/var/app/",
+        "hostPath": "/var/app",
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "selinuxRelabel": false
+      },
+      {
+        "containerPath": "/etc/hosts",
+        "hostPath": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/etc-hosts",
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "selinuxRelabel": true
+      },
+      {
+        "containerPath": "/dev/termination-log",
+        "hostPath": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/containers/fluentd/b95cdb29",
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": false,
+        "selinuxRelabel": true
+      },
+      {
+        "containerPath": "/fluentd/etc/fluent.conf",
+        "hostPath": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volume-subpaths/fluentd-config/fluentd/0",
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": true,
+        "selinuxRelabel": true
+      },
+      {
+        "containerPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+        "hostPath": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volumes/kubernetes.io~projected/kube-api-access-dlhm6",
+        "propagation": "PROPAGATION_PRIVATE",
+        "readonly": true,
+        "selinuxRelabel": true
+      }
+    ],
+    "logPath": "/var/log/pods/logsample_samplelog-c47bb8fdf-shlps_af7f68b4-597c-4595-a77c-b5b28fe7fa6b/fluentd/0.log",
+    "resources": null
+  },
+  "info": {
+    "sandboxID": "defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89",
+    "pid": 587606,
+    "runtimeSpec": {
+      "ociVersion": "1.0.2-dev",
+      "process": {
+        "user": {
+          "uid": 1000,
+          "gid": 2000,
+          "additionalGids": [
+            2000
+          ]
+        },
+        "args": [
+          "tini",
+          "--",
+          "/fluentd/entrypoint.sh"
+        ],
+        "env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "TERM=xterm",
+          "HOSTNAME=samplelog-c47bb8fdf-shlps",
+          "NSS_SDB_USE_CACHE=no",
+          "FLUENT_UID=0",
+          "KUBERNETES_PORT_443_TCP_PROTO=tcp",
+          "SAMPLELOG_PORT=tcp://172.30.108.117:80",
+          "KUBERNETES_SERVICE_PORT_HTTPS=443",
+          "KUBERNETES_PORT_443_TCP_PORT=443",
+          "SAMPLELOG_SERVICE_PORT=80",
+          "KUBERNETES_SERVICE_HOST=172.30.0.1",
+          "KUBERNETES_PORT_443_TCP_ADDR=172.30.0.1",
+          "SAMPLELOG_PORT_80_TCP_ADDR=172.30.108.117",
+          "KUBERNETES_SERVICE_PORT=443",
+          "KUBERNETES_PORT_443_TCP=tcp://172.30.0.1:443",
+          "SAMPLELOG_SERVICE_HOST=172.30.108.117",
+          "SAMPLELOG_SERVICE_PORT_HTTP=80",
+          "SAMPLELOG_PORT_80_TCP=tcp://172.30.108.117:80",
+          "SAMPLELOG_PORT_80_TCP_PROTO=tcp",
+          "SAMPLELOG_PORT_80_TCP_PORT=80",
+          "KUBERNETES_PORT=tcp://172.30.0.1:443",
+          "PATH=/fluentd/vendor/bundle/ruby/3.1.0/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "RUBY_MAJOR=3.1",
+          "RUBY_VERSION=3.1.4",
+          "RUBY_DOWNLOAD_SHA256=1b6d6010e76036c937b9671f4752f065aeca800a6c664f71f6c9a699453af94f",
+          "GEM_HOME=/fluentd/vendor/bundle/ruby/3.1.0",
+          "BUNDLE_SILENCE_ROOT_WARNING=1",
+          "BUNDLE_APP_CONFIG=/usr/local/bundle",
+          "TINI_VERSION=0.18.0",
+          "FLUENTD_CONF=fluent.conf",
+          "LD_PRELOAD=/usr/lib/libjemalloc.so.2",
+          "GEM_PATH=/fluentd/vendor/bundle/ruby/3.1.0",
+          "FLUENTD_DISABLE_BUNDLER_INJECTION=1",
+          "FLUENTD_OPT="
+        ],
+        "cwd": "/home/fluent",
+        "capabilities": {
+          "bounding": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_KILL"
+          ],
+          "effective": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_KILL"
+          ],
+          "permitted": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_KILL"
+          ]
+        },
+        "noNewPrivileges": true,
+        "oomScoreAdj": 1000,
+        "selinuxLabel": "system_u:system_r:container_t:s0:c27,c24"
+      },
+      "root": {
+        "path": "/var/lib/containers/storage/overlay/931654ac40cfebe62e4ace9b3a4edfeb954b8f85e1bd395fec6a7e8e0ddb9549/merged"
+      },
+      "hostname": "samplelog-c47bb8fdf-shlps",
+      "mounts": [
+        {
+          "destination": "/proc",
+          "type": "proc",
+          "source": "proc",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev"
+          ]
+        },
+        {
+          "destination": "/dev",
+          "type": "tmpfs",
+          "source": "tmpfs",
+          "options": [
+            "nosuid",
+            "strictatime",
+            "mode=755",
+            "size=65536k"
+          ]
+        },
+        {
+          "destination": "/dev/pts",
+          "type": "devpts",
+          "source": "devpts",
+          "options": [
+            "nosuid",
+            "noexec",
+            "newinstance",
+            "ptmxmode=0666",
+            "mode=0620",
+            "gid=5"
+          ]
+        },
+        {
+          "destination": "/dev/mqueue",
+          "type": "mqueue",
+          "source": "mqueue",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev"
+          ]
+        },
+        {
+          "destination": "/sys",
+          "type": "sysfs",
+          "source": "sysfs",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev",
+            "ro"
+          ]
+        },
+        {
+          "destination": "/sys/fs/cgroup",
+          "type": "cgroup",
+          "source": "cgroup",
+          "options": [
+            "nosuid",
+            "noexec",
+            "nodev",
+            "relatime",
+            "ro"
+          ]
+        },
+        {
+          "destination": "/dev/shm",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89/userdata/shm",
+          "options": [
+            "rw",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/etc/resolv.conf",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89/userdata/resolv.conf",
+          "options": [
+            "rw",
+            "bind",
+            "nodev",
+            "nosuid",
+            "noexec"
+          ]
+        },
+        {
+          "destination": "/etc/hostname",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89/userdata/hostname",
+          "options": [
+            "rw",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/run/.containerenv",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89/userdata/.containerenv",
+          "options": [
+            "rw",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/etc/passwd",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/f4957b8f25df619774e61494a5d32369b18b80a00224d513ae5b08cc71b7d3a5/userdata/passwd",
+          "options": [
+            "rw",
+            "bind",
+            "nodev",
+            "nosuid",
+            "noexec"
+          ]
+        },
+        {
+          "destination": "/var/app/",
+          "type": "bind",
+          "source": "/var/app",
+          "options": [
+            "rw",
+            "rbind",
+            "rprivate",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/etc/hosts",
+          "type": "bind",
+          "source": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/etc-hosts",
+          "options": [
+            "rw",
+            "rbind",
+            "rprivate",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/dev/termination-log",
+          "type": "bind",
+          "source": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/containers/fluentd/b95cdb29",
+          "options": [
+            "rw",
+            "rbind",
+            "rprivate",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/run/secrets",
+          "type": "bind",
+          "source": "/run/containers/storage/overlay-containers/f4957b8f25df619774e61494a5d32369b18b80a00224d513ae5b08cc71b7d3a5/userdata/run/secrets",
+          "options": [
+            "bind",
+            "rprivate",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/fluentd/etc/fluent.conf",
+          "type": "bind",
+          "source": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volume-subpaths/fluentd-config/fluentd/0",
+          "options": [
+            "ro",
+            "rbind",
+            "rprivate",
+            "bind"
+          ]
+        },
+        {
+          "destination": "/var/run/secrets/kubernetes.io/serviceaccount",
+          "type": "bind",
+          "source": "/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volumes/kubernetes.io~projected/kube-api-access-dlhm6",
+          "options": [
+            "ro",
+            "rbind",
+            "rprivate",
+            "bind"
+          ]
+        }
+      ],
+      "annotations": {
+        "io.kubernetes.cri-o.ContainerID": "f4957b8f25df619774e61494a5d32369b18b80a00224d513ae5b08cc71b7d3a5",
+        "io.kubernetes.cri-o.SandboxID": "defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89",
+        "io.kubernetes.cri-o.ResolvPath": "/run/containers/storage/overlay-containers/defa91ee34992bd1e4425879d044886a846c17f2785ce357c01192202b899a89/userdata/resolv.conf",
+        "io.kubernetes.cri-o.Volumes": "[{\"container_path\":\"/var/app/\",\"host_path\":\"/var/app\",\"readonly\":false,\"propagation\":0,\"selinux_relabel\":false},{\"container_path\":\"/etc/hosts\",\"host_path\":\"/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/etc-hosts\",\"readonly\":false,\"propagation\":0,\"selinux_relabel\":true},{\"container_path\":\"/dev/termination-log\",\"host_path\":\"/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/containers/fluentd/b95cdb29\",\"readonly\":false,\"propagation\":0,\"selinux_relabel\":true},{\"container_path\":\"/fluentd/etc/fluent.conf\",\"host_path\":\"/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volume-subpaths/fluentd-config/fluentd/0\",\"readonly\":true,\"propagation\":0,\"selinux_relabel\":true},{\"container_path\":\"/var/run/secrets/kubernetes.io/serviceaccount\",\"host_path\":\"/var/lib/kubelet/pods/af7f68b4-597c-4595-a77c-b5b28fe7fa6b/volumes/kubernetes.io~projected/kube-api-access-dlhm6\",\"readonly\":true,\"propagation\":0,\"selinux_relabel\":true}]",
+        "org.systemd.property.CollectMode": "'inactive-or-failed'",
+        "org.systemd.property.After": "['crio.service']",
+        "openshift.io/scc": "hostmount-anyuid-logsample",
+        "kubernetes.io/config.seen": "2023-07-13T04:58:44.650786955Z",
+        "io.kubernetes.cri-o.MountPoint": "/var/lib/containers/storage/overlay/931654ac40cfebe62e4ace9b3a4edfeb954b8f85e1bd395fec6a7e8e0ddb9549/merged",
+        "io.kubernetes.container.terminationMessagePath": "/dev/termination-log",
+        "io.kubernetes.cri-o.ImageName": "docker.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch",
+        "io.kubernetes.cri-o.ContainerType": "container",
+        "io.kubernetes.cri-o.Annotations": "{\"io.kubernetes.container.hash\":\"a19f88d8\",\"io.kubernetes.container.restartCount\":\"0\",\"io.kubernetes.container.terminationMessagePath\":\"/dev/termination-log\",\"io.kubernetes.container.terminationMessagePolicy\":\"File\",\"io.kubernetes.pod.terminationGracePeriod\":\"30\"}",
+        "io.kubernetes.pod.name": "samplelog-c47bb8fdf-shlps",
+        "io.kubernetes.cri-o.Created": "2023-07-13T04:58:46.19284789Z",
+        "io.kubernetes.cri-o.Labels": "{\"io.kubernetes.container.name\":\"fluentd\",\"io.kubernetes.pod.name\":\"samplelog-c47bb8fdf-shlps\",\"io.kubernetes.pod.namespace\":\"logsample\",\"io.kubernetes.pod.uid\":\"af7f68b4-597c-4595-a77c-b5b28fe7fa6b\"}",
+        "io.kubernetes.container.restartCount": "0",
+        "io.kubernetes.pod.uid": "af7f68b4-597c-4595-a77c-b5b28fe7fa6b",
+        "io.kubernetes.cri-o.SandboxName": "k8s_samplelog-c47bb8fdf-shlps_logsample_af7f68b4-597c-4595-a77c-b5b28fe7fa6b_0",
+        "io.kubernetes.cri-o.TTY": "false",
+        "io.kubernetes.container.hash": "a19f88d8",
+        "kubernetes.io/config.source": "api",
+        "io.kubernetes.pod.terminationGracePeriod": "30",
+        "io.kubernetes.cri-o.Name": "k8s_fluentd_samplelog-c47bb8fdf-shlps_logsample_af7f68b4-597c-4595-a77c-b5b28fe7fa6b_0",
+        "io.kubernetes.cri-o.LogPath": "/var/log/pods/logsample_samplelog-c47bb8fdf-shlps_af7f68b4-597c-4595-a77c-b5b28fe7fa6b/fluentd/0.log",
+        "io.kubernetes.cri-o.Metadata": "{\"name\":\"fluentd\"}",
+        "io.kubernetes.container.terminationMessagePolicy": "File",
+        "org.systemd.property.TimeoutStopUSec": "uint64 30000000",
+        "io.kubernetes.cri-o.Image": "e36f3ef6de1c6735d3b5b5db8ea625d120707b0ef6cfab7a1fa3284d6342810e",
+        "io.kubernetes.cri-o.ImageRef": "e36f3ef6de1c6735d3b5b5db8ea625d120707b0ef6cfab7a1fa3284d6342810e",
+        "io.container.manager": "cri-o",
+        "io.kubernetes.cri-o.SeccompProfilePath": "",
+        "io.kubernetes.pod.namespace": "logsample",
+        "io.kubernetes.container.name": "fluentd",
+        "io.kubernetes.cri-o.IP.0": "10.128.0.61",
+        "org.systemd.property.DefaultDependencies": "true",
+        "io.kubernetes.cri-o.Stdin": "false",
+        "io.kubernetes.cri-o.StdinOnce": "false"
+      },
+      "linux": {
+        "resources": {
+          "devices": [
+            {
+              "allow": false,
+              "access": "rwm"
+            }
+          ],
+          "cpu": {
+            "shares": 2,
+            "quota": 0,
+            "period": 100000
+          },
+          "pids": {
+            "limit": 0
+          },
+          "hugepageLimits": [
+            {
+              "pageSize": "2MB",
+              "limit": 0
+            },
+            {
+              "pageSize": "1GB",
+              "limit": 0
+            }
+          ]
+        },
+        "cgroupsPath": "kubepods-besteffort-podaf7f68b4_597c_4595_a77c_b5b28fe7fa6b.slice:crio:f4957b8f25df619774e61494a5d32369b18b80a00224d513ae5b08cc71b7d3a5",
+        "namespaces": [
+          {
+            "type": "pid"
+          },
+          {
+            "type": "network",
+            "path": "/var/run/netns/efe32121-581f-4237-9763-fc63bc0ec570"
+          },
+          {
+            "type": "ipc",
+            "path": "/var/run/ipcns/efe32121-581f-4237-9763-fc63bc0ec570"
+          },
+          {
+            "type": "uts",
+            "path": "/var/run/utsns/efe32121-581f-4237-9763-fc63bc0ec570"
+          },
+          {
+            "type": "mount"
+          }
+        ],
+        "maskedPaths": [
+          "/proc/acpi",
+          "/proc/kcore",
+          "/proc/keys",
+          "/proc/latency_stats",
+          "/proc/timer_list",
+          "/proc/timer_stats",
+          "/proc/sched_debug",
+          "/proc/scsi",
+          "/sys/firmware"
+        ],
+        "readonlyPaths": [
+          "/proc/asound",
+          "/proc/bus",
+          "/proc/fs",
+          "/proc/irq",
+          "/proc/sys",
+          "/proc/sysrq-trigger"
+        ],
+        "mountLabel": "system_u:object_r:container_file_t:s0:c27,c24"
+      }
+    },
+    "privileged": false
+  }
+}

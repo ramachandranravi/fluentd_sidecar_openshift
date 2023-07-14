@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: samplelog
-          image: jtarte/logsample:latest
+          #image: jtarte/logsample:latest
+          image: 192.168.18.26:5000/jtarte/logsample
           imagePullPolicy: "Always"
           ports:
             - containerPort: 8080

@@ -16,24 +16,25 @@ spec:
         app: samplelog
     spec:
       serviceAccountName: logsample
-      #securityContext:
+      securityContext:
       # runAsUser: 1000
       # runAsGroup: 2000
       # fsGroup: 2000
       #securityContext:
-      # seLinuxOptions:
-      #  type: logsample-seprofile_logsample.process
+       seLinuxOptions:
+        type: logsample-seprofile_logsample.process
       containers:
         - name: samplelog
           ######previously working image########
-          image: quay.io/rh_ee_raravi/logsample
+          #image: quay.io/rh_ee_raravi/logsample
+          image: quay.io/rh_ee_raravi/logsample1
           imagePullPolicy: "Always"
           securityContext:
-                  # runAsUser: 1000
-                  # runAsGroup: 1000
-                  # fsGroup: 2000
-           seLinuxOptions:
-             type: logsample-seprofile_logsample.process
+           runAsUser: 65000
+           runAsGroup: 65000
+           # fsGroup: 2000
+           #seLinuxOptions:
+           # type: logsample-seprofile_logsample.process
           ports:
             - containerPort: 8080
           env:
@@ -46,12 +47,12 @@ spec:
             mountPath: /var/app/
         - name: fluentd
           securityContext:
-            seLinuxOptions:
-                type: logsample-seprofile_logsample.process
+                  #seLinuxOptions:
+                  #type: logsample-seprofile_logsample.process
                 #capabilities:
                 #add: ["MKNOD", "DAC_READ_SEARCH", "DAC_OVERRIDE", "FOWNER"]
-                #runAsUser: 1000
-                #runAsGroup: 2000
+                runAsUser: 65000
+                runAsGroup: 65000
                 #fsGroup: 2000
           image: fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
           env:
